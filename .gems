@@ -1,0 +1,10 @@
+# .gems generated gem export file. Note that any env variable settings will be missing. Append these after using a ';' field separator
+bundler -v1.1.4
+coderay -v1.0.6
+gemcutter -v0.7.1
+hirb -v0.6.2
+i18n -v0.6.0
+method_source -v0.7.1
+pry -v0.9.9.6
+rvm -v1.11.3.3
+slop -v2.4.4
