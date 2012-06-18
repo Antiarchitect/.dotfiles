@@ -6,5 +6,7 @@ hirb -v0.6.2
 i18n -v0.6.0
 method_source -v0.7.1
 pry -v0.9.9.6
+pry-doc -v0.4.2
 rvm -v1.11.3.3
 slop -v2.4.4
+yard -v0.8.2.1
