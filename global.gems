@@ -1,6 +1,7 @@
 # global.gems generated gem export file. Note that any env variable settings will be missing. Append these after using a ';' field separator
 
 archive-tar-minitar -v0.5.2
+bundler -v1.2.3
 bundler -v1.2.1
 coderay -v1.0.8
 columnize -v0.3.6
@@ -11,10 +12,13 @@ linecache19 -v0.5.12
 method_source -v0.8.1
 pry -v0.9.10
 pry-doc -v0.4.4
+rake -v10.0.3
 rake -v0.9.2.2
 ruby-debug-base19x -v0.11.30.pre10
 ruby-debug-ide -v0.4.17.beta14
 ruby_core_source -v0.1.5
+rubygems-bundler -v1.1.0
 rvm -v1.11.3.5
+slop -v3.4.1
 slop -v3.3.3
 yard -v0.8.3
