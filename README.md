@@ -1,4 +1,4 @@
-.rc
+.dotfiles
 ===
 
-This repo contains all of my default .*rc files like .gemrc .irbrc and many others.
+This repo contains all of my default configuration files like .gemrc .irbrc and many others.
