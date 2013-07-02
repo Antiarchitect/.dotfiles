@@ -1,3 +1,5 @@
 [user]
   name = Andrey Voronkov
   email = voronkovaa@gmail.com
+[push]
+  default = simple
