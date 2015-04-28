@@ -52,9 +52,9 @@ bash_prompt() {
     rvm_prompt="$(rvm-prompt i v g)"
 
     if [ -z "$branch" ]; then
-       export PS1="[${EMC}${dir}${EMW}:${EMG}${rvm_prompt}${NONE}] "
+       export PS1="${C}${dir}${W}:${G}${rvm_prompt} ${W}>${NONE} "
     else
-       export PS1="[${EMC}${dir}${EMW}:${EMG}${rvm_prompt}${EMW}:${EMY}${branch}${NONE}] "
+       export PS1="${C}${dir}${W}:${G}${rvm_prompt}${W}:${EMY}${branch} ${W}>${NONE} "
     fi
  
 }
