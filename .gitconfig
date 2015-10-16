@@ -3,3 +3,5 @@
   email = voronkovaa@gmail.com
 [push]
   default = simple
+[alias]
+  plog = log --oneline --graph --decorate  
