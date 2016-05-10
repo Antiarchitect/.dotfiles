@@ -14,7 +14,7 @@ export PATH
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 
 bash_prompt() {
-   
+
     local NONE="\[\033[0m\]"    # unsets color to term's fg color
 
     # regular colors
@@ -48,14 +48,15 @@ bash_prompt() {
     local BGW="\[\033[47m\]"
 
     branch=$(git branch 2> /dev/null | grep -e "\* " | sed "s/^..\(.*\)/\1/")
-    dir=$(pwd) 
+    dir=$(pwd)
     rvm_prompt="$(rvm-prompt i v g)"
 
     if [ -z "$branch" ]; then
-       export PS1="${C}${dir}${W}:${G}${rvm_prompt} ${W}>${NONE} "
+       export PS1="${EMW}[${C}${dir}${EMW}][${G}${rvm_prompt}${EMW}] ${EMR}>>>${NONE} "
     else
-       export PS1="${C}${dir}${W}:${G}${rvm_prompt}${W}:${EMY}${branch} ${W}>${NONE} "
+       export PS1="${EMW}[${C}${dir}${EMW}][${G}${rvm_prompt}${EMW}][${Y}${branch}${EMW}] ${EMR}>>>${NONE} "
     fi
- 
+
 }
 PROMPT_COMMAND=bash_prompt
+HISTSIZE=10000

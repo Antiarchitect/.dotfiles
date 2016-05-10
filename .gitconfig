@@ -3,6 +3,6 @@
   email = voronkovaa@gmail.com 
 
 [push]
-	default = simple
+  default = simple
 [alias]
-	plog = log --pretty=format:'%Cred%h%Creset - %C(bold blue)<%an>%Creset%C(bold yellow)%d%Creset %s %Cgreen(%cr)' --abbrev-commit
+  plog = log --pretty=format:'%Cred%h%Creset - %C(bold blue)<%an>%Creset%C(bold yellow)%d%Creset %s %Cgreen(%cr)' --abbrev-commit
