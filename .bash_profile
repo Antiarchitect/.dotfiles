@@ -60,3 +60,4 @@ bash_prompt() {
 }
 PROMPT_COMMAND=bash_prompt
 HISTSIZE=10000
+EDITOR=vim
