@@ -52,9 +52,9 @@ bash_prompt() {
     rvm_prompt="$(rvm-prompt i v g)"
 
     if [ -z "$branch" ]; then
-       export PS1="${EMW}[${C}${dir}${EMW}][${G}${rvm_prompt}${EMW}] ${EMR}>>>${NONE} "
+        export PS1="${EMW}[${Y}\$(date +%H:%M:%S.%N)${EMW}][${C}${dir}${EMW}][${G}${rvm_prompt}${EMW}] ${EMR}>>>${NONE} "
     else
-       export PS1="${EMW}[${C}${dir}${EMW}][${G}${rvm_prompt}${EMW}][${Y}${branch}${EMW}] ${EMR}>>>${NONE} "
+        export PS1="${EMW}[${Y}\$(date +%H:%M:%S.%N)${EMW}][${C}${dir}${EMW}][${G}${rvm_prompt}${EMW}][${Y}${branch}${EMW}] ${EMR}>>>${NONE} "
     fi
 
 }
