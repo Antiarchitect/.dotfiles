@@ -45,7 +45,7 @@ bash_prompt() {
     local BGC="\[\033[46m\]"
     local BGW="\[\033[47m\]"
 
-    timestamp="[$(date --rfc-3339=ns)]"
+    timestamp="[Finished at: $(date --rfc-3339=ns)]"
     let fillsize=${COLUMNS}-${#timestamp}
     fill=""
     while [ "$fillsize" -gt "0" ]
