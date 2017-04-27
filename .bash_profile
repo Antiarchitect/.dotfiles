@@ -61,7 +61,7 @@ bash_prompt() {
       branch="[${Y}${branch}${EMW}]"
     fi
 
-    export PS1="${EMY}${timestamp}${fill}\n${EMW}[${C}${dir}${EMW}][${G}${rvm_prompt}${EMW}]${branch} ${EMR}>>>${NONE} "
+    export PS1="${EMY}${timestamp}${fill}${NONE}\n${EMW}[${C}${dir}${EMW}][${G}${rvm_prompt}${EMW}]${branch} ${EMR}>>>${NONE} "
 }
 PROMPT_COMMAND=bash_prompt
 HISTSIZE=10000
