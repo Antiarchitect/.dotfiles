@@ -11,8 +11,6 @@ PATH=$PATH:$HOME/.local/bin:$HOME/bin
 
 export PATH
 
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
-
 bash_prompt() {
 
     local NONE="\[\033[0m\]"    # unsets color to term's fg color
@@ -47,16 +45,23 @@ bash_prompt() {
     local BGC="\[\033[46m\]"
     local BGW="\[\033[47m\]"
 
+    timestamp="[$(date --rfc-3339=ns)]"
+    let fillsize=${COLUMNS}-${#timestamp}
+    fill=""
+    while [ "$fillsize" -gt "0" ]
+    do
+      fill="-${fill}"
+      let fillsize=${fillsize}-1
+    done
+
     branch=$(git branch 2> /dev/null | grep -e "\* " | sed "s/^..\(.*\)/\1/")
     dir=$(pwd)
     rvm_prompt="$(rvm-prompt i v g)"
-
-    if [ -z "$branch" ]; then
-        export PS1="${EMW}[${Y}\$(date +%H:%M:%S.%N)${EMW}][${C}${dir}${EMW}][${G}${rvm_prompt}${EMW}] ${EMR}>>>${NONE} "
-    else
-        export PS1="${EMW}[${Y}\$(date +%H:%M:%S.%N)${EMW}][${C}${dir}${EMW}][${G}${rvm_prompt}${EMW}][${Y}${branch}${EMW}] ${EMR}>>>${NONE} "
+    if [ ! -z "$branch" ]; then
+      branch="[${Y}${branch}${EMW}]"
     fi
 
+    export PS1="${EMY}${timestamp}${fill}\n${EMW}[${C}${dir}${EMW}][${G}${rvm_prompt}${EMW}]${branch} ${EMR}>>>${NONE} "
 }
 PROMPT_COMMAND=bash_prompt
 HISTSIZE=10000
