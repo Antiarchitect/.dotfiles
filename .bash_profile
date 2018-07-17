@@ -81,16 +81,16 @@ bash_prompt() {
 
     branch=$(git branch 2> /dev/null | grep -e "\* " | sed "s/^..\(.*\)/\1/")
     dir=$(pwd)
-    rvm_prompt="$(rvm-prompt i v g)"
     if [ ! -z "$branch" ]; then
       branch="[${Y}${branch}${EMW}]"
     fi
 
-    export PS1="${EMY}${timestamp}${fill}${NONE}\n${EMW}[${C}${dir}${EMW}][${G}${rvm_prompt}${EMW}]${branch} ${EMR}>>>${NONE} "
+    export PS1="${EMY}${timestamp}${fill}${NONE}\n${EMW}[${C}${dir}${EMW}]${branch} ${EMR}>>>${NONE} "
 }
 trap 'timer_start' DEBUG
 PROMPT_COMMAND=bash_prompt
 HISTSIZE=10000
-EDITOR=vim
 
 export PATH="$HOME/.cargo/bin:$PATH"
+
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
