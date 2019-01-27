@@ -7,8 +7,10 @@ fi
 
 # User specific environment and startup programs
 
-PATH=$PATH:$HOME/.local/bin:$HOME/bin
-
+PATH="${HOME}/bin:${PATH}"
+PATH="${HOME}/.local/bin:${PATH}"
+PATH="${HOME}/.cargo/bin:${PATH}"
+PATH="${HOME}/bin/flutter/bin:${PATH}"
 export PATH
 
 function timer_now {
@@ -52,7 +54,7 @@ bash_prompt() {
     local BGM="\[\033[45m\]"
     local BGC="\[\033[46m\]"
     local BGW="\[\033[47m\]"
-    
+
     local delta_us=$((($(timer_now) - $timer_start) / 1000))
     local us=$((delta_us % 1000))
     local ms=$(((delta_us / 1000) % 1000))
@@ -89,8 +91,15 @@ bash_prompt() {
 }
 trap 'timer_start' DEBUG
 PROMPT_COMMAND=bash_prompt
+
+function start_tmux() {
+    if type tmux &> /dev/null; then
+        #if not inside a tmux session, and if no session is started, start a new session
+        if [[ -z "$TMUX" && -z $TERMINAL_CONTEXT ]]; then
+            (tmux -2 attach || tmux -2 new-session)
+        fi
+    fi
+}
+start_tmux
+
 HISTSIZE=10000
-
-export PATH="$HOME/.cargo/bin:$PATH"
-
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
