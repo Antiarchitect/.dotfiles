@@ -63,7 +63,7 @@ This function should only modify configuration layer settings."
      rust
      (shell :variables
             shell-default-height 80
-            shell-default-position 'bottom
+            shell-default-position 'top
             shell-default-shell 'ansi-term)
      treemacs
      yaml
