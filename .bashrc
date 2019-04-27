@@ -11,9 +11,13 @@ PATH="${HOME}/.cargo/bin:${PATH}"
 PATH="${HOME}/bin/flutter/bin:${PATH}"
 export PATH
 
-. $HOME/.asdf/asdf.sh
+if [ -f "$HOME/.asdf/asdf.sh" ]; then
+    . $HOME/.asdf/asdf.sh
+fi
 
-. $HOME/.asdf/completions/asdf.bash
+if [ -f "$HOME/.asdf/completions/asdf.bash" ]; then
+    . $HOME/.asdf/completions/asdf.bash
+fi
 
 source <(kubectl completion bash)
 
