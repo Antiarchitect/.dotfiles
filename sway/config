@@ -21,7 +21,6 @@ set $menu dmenu_run
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-output * bg ~/Pictures/UHD/wallhaven-664897.png fill
 #
 # Example configuration:
 #
