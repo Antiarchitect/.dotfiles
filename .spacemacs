@@ -61,6 +61,7 @@ This function should only modify configuration layer settings."
      nginx
      notmuch
      php
+     puppet
      python
      react
      ruby
@@ -473,6 +474,11 @@ This function is called at the very end of Spacemacs startup, after layer
 configuration.
 Put your configuration code here, except for variables that should be set
 before packages are loaded."
+  ;; SHOW TRAILING WHITESPACE
+  (require 'whitespace)
+  (setq-default whitespace-style '(face trailing))
+  (setq-default whitespace-line-column 80)
+  (global-whitespace-mode 1)
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
