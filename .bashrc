@@ -5,25 +5,27 @@ if [ -f /etc/bashrc ]; then
     . /etc/bashrc
 fi
 
-PATH="${HOME}/bin:${PATH}"
-PATH="${HOME}/.local/bin:${PATH}"
-PATH="${HOME}/.cargo/bin:${PATH}"
-PATH="${HOME}/bin/flutter/bin:${PATH}"
+PATH="$HOME/bin:$PATH"
+PATH="$HOME/.local/bin:$PATH"
+PATH="$HOME/.cargo/bin:$PATH"
 export PATH
 
 if [ -f "$HOME/.asdf/asdf.sh" ]; then
-    . $HOME/.asdf/asdf.sh
+    . "$HOME"/.asdf/asdf.sh
 fi
 
 if [ -f "$HOME/.asdf/completions/asdf.bash" ]; then
-    . $HOME/.asdf/completions/asdf.bash
+    . "$HOME"/.asdf/completions/asdf.bash
 fi
 
 source <(kubectl completion bash)
+source <(helm completion bash)
+
+alias rg='rg --hidden'
 
 export EDITOR=emacs
-export HISTFILESIZE=
-export HISTSIZE=
+export XKB_DEFAULT_LAYOUT="us,ru"
+export XKB_DEFAULT_OPTIONS="grp:alt_shift_toggle"
 
 function timer_now {
     date +%s%N
@@ -76,30 +78,30 @@ bash_prompt() {
     # Goal: always show around 3 digits of accuracy
     if ((h > 0)); then timer_show=${h}h${m}m
     elif ((m > 0)); then timer_show=${m}m${s}s
-    elif ((s >= 10)); then timer_show=${s}.$((ms / 100))s
-    elif ((s > 0)); then timer_show=${s}.$(printf %03d $ms)s
+    elif ((s >= 10)); then timer_show=$s.$((ms / 100))s
+    elif ((s > 0)); then timer_show=$s.$(printf %03d "$ms")s
     elif ((ms >= 100)); then timer_show=${ms}ms
-    elif ((ms > 0)); then timer_show=${ms}.$((us / 100))ms
+    elif ((ms > 0)); then timer_show=$ms.$((us / 100))ms
     else timer_show=${us}us
     fi
     unset timer_start
 
-    timestamp="[Finished: $(date --rfc-3339=ns)][Spent: ${timer_show}]"
-    let fillsize=${COLUMNS}-${#timestamp}
+    timestamp="[Finished: $(date --rfc-3339=ns)][Spent: $timer_show]"
+    let fillsize="$COLUMNS-${#timestamp}"
     fill=""
     while [ "$fillsize" -gt "0" ]
     do
-      fill="-${fill}"
-      let fillsize=${fillsize}-1
+      fill="-$fill"
+      let fillsize="$fillsize"-1
     done
 
     branch=$(git branch 2> /dev/null | grep -e "\* " | sed "s/^..\(.*\)/\1/")
-    dir=$(pwd)
+    dir=$PWD
     if [ ! -z "$branch" ]; then
-      branch="[${Y}${branch}${EMW}]"
+      branch="[$Y$branch$EMW]"
     fi
 
-    export PS1="${EMY}${timestamp}${fill}${NONE}\n${EMW}[${C}${dir}${EMW}]${branch} ${EMR}>>>${NONE} "
+    export PS1="$EMY$timestamp$fill$NONE\n$EMW[$C$dir$EMW]$branch $EMR>>>$NONE "
 }
 trap 'timer_start' DEBUG
 PROMPT_COMMAND=bash_prompt
