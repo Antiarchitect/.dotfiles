@@ -57,7 +57,9 @@ This function should only modify configuration layer settings."
             )
      (treemacs :variables
                treemacs-use-follow-mode t
-               treemacs-show-hidden-files t)
+               treemacs-show-hidden-files t
+               treemacs-width 30
+               )
      yaml
      )
 
@@ -490,7 +492,11 @@ dump."
   (setq-default whitespace-style '(face trailing))
   (setq-default whitespace-line-column 80)
   (global-whitespace-mode 1)
+
+  ;; VISUAL MODE REPLACE
+  (setq evil-ex-visual-char-range t)
   )
+
 
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.
