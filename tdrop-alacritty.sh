@@ -1,3 +1,3 @@
-#!/bin/sh
+#!/usr/bin/env sh
 
-tdrop -ma -h 100% alacritty
+/usr/local/bin/tdrop -ma -h 100% /usr/bin/alacritty
