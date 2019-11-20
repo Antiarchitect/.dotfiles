@@ -24,7 +24,7 @@ source <(helm completion bash)
 export EDITOR=emacs
 export XKB_DEFAULT_LAYOUT="us,ru"
 export XKB_DEFAULT_OPTIONS="grp:alt_shift_toggle"
-alias rg="rg --line-number --pcre2 --smart-case -uuu -- "
+alias rg="rg --line-number --pcre2 --smart-case -uuu"
 
 function timer_now {
     date +%s%N
