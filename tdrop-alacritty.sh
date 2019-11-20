@@ -1,3 +1,3 @@
-#!/usr/bin/env sh
+#!/bin/sh
 
-/usr/local/bin/tdrop -ma -h 100% /usr/bin/alacritty
+tdrop -ma -h 100% -s dropdown alacritty
