@@ -85,7 +85,7 @@ bash_prompt() {
     fi
     unset timer_start
 
-    timestamp="[Finished: $(date --rfc-3339=ns)][Spent: $timer_show]"
+    timestamp="${EMY}[${Y}Finished: $(date --rfc-3339=ns)${EMY}][${Y}Spent: $timer_show${EMY}]${Y}"
     let fillsize="$COLUMNS-${#timestamp}"
     fill=""
     while [ "$fillsize" -gt "0" ]
@@ -100,7 +100,7 @@ bash_prompt() {
       branch="[$Y$branch$EMW]"
     fi
 
-    export PS1="$EMY$timestamp$fill$NONE\n$EMW[$C$dir$EMW]$branch $EMR>>>$NONE "
+    export PS1="$timestamp$fill$NONE\n$EMW[$C$dir$EMW]$branch $EMR>>>$NONE "
 }
 trap 'timer_start' DEBUG
 PROMPT_COMMAND=bash_prompt
