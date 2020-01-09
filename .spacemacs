@@ -62,8 +62,6 @@ This function should only modify configuration layer settings."
      (treemacs :variables
                treemacs-use-follow-mode t
                treemacs-show-hidden-files t
-               treemacs-sorting 'alphabetic-asc
-               treemacs-width 20
                )
      yaml
      )
