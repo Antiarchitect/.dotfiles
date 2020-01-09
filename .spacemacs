@@ -60,8 +60,10 @@ This function should only modify configuration layer settings."
             shell-default-shell 'ansi-term
             )
      (treemacs :variables
-               treemacs-use-follow-mode t
                treemacs-show-hidden-files t
+               treemacs-use-filewatch-mode t
+               treemacs-use-follow-mode t
+
                )
      yaml
      )
