@@ -503,7 +503,7 @@ dump."
 
   ;; HELM AG SETUP
   (evil-leader/set-key "/" 'spacemacs/helm-project-do-ag)
-  (setq helm-ag-base-command "rg --color never --line-number --no-heading --smart-case -uuu")
+  (setq helm-ag-base-command "rg --color never --line-number --no-heading --smart-case --text -uuu")
 )
 
 
