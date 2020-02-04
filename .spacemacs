@@ -220,7 +220,7 @@ It should only modify the values of Spacemacs settings."
    ;; Default font, or prioritized list of fonts. `powerline-scale' allows to
    ;; quickly tweak the mode-line size to make separators look not too crappy.
    dotspacemacs-default-font `("Source Code Pro"
-                               :size ,(if (string-equal "warbook" (system-name)) 20 32)
+                               :size ,(if (string-equal "warbook" (system-name)) 24 32)
                                :weight normal
                                :width normal)
 
