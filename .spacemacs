@@ -37,11 +37,8 @@ This function should only modify configuration layer settings."
      ;; Uncomment some layer names and press `SPC f e R' (Vim style) or
      ;; `M-m f e R' (Emacs style) to install them.
      ;; ----------------------------------------------------------------
-     ansible
      emacs-lisp
-     erlang
      git
-     go
      (helm :variables
            helm-no-header t
            )
@@ -49,8 +46,6 @@ This function should only modify configuration layer settings."
      javascript
      markdown
      multiple-cursors
-     nginx
-     php
      puppet
      python
      ruby
@@ -61,7 +56,6 @@ This function should only modify configuration layer settings."
             shell-default-shell 'ansi-term
             )
      sql
-     syntax-checking
      (treemacs :variables
                treemacs-show-hidden-files t
                treemacs-sorting 'alphabetic-asc
