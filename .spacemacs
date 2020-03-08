@@ -44,12 +44,17 @@ This function should only modify configuration layer settings."
            )
      html
      javascript
+     (lsp :variables
+          lsp-rust-server 'rust-analyzer
+          )
      markdown
      multiple-cursors
      puppet
      python
      ruby
-     rust
+     (rust :variables
+           rust-backend 'lsp
+           )
      (shell :variables
             shell-default-height 100
             shell-default-position 'top
