@@ -60,6 +60,7 @@ This function should only modify configuration layer settings."
             shell-default-position 'top
             shell-default-shell 'ansi-term
             )
+     shell-scripts
      sql
      (treemacs :variables
                treemacs-show-hidden-files t
