@@ -39,6 +39,15 @@ This function should only modify configuration layer settings."
      ;; `M-m f e R' (Emacs style) to install them.
      ;; ----------------------------------------------------------------
      emacs-lisp
+     (exwm :location (recipe :fetcher github :repo "ch11ng/exwm")
+           :variables
+           exwm-autostart-xdg-applications nil
+           exwm-enable-systray t
+           exwm-install-logind-lock-handler nil
+           exwm-locking-command "i3lock -n"
+           exwm-terminal-command "/home/andrey/PROJECTS/.dotfiles/tdrop-alacritty.sh"
+           exwm-use-autorandr t
+           )
      git
      go
      (helm :variables
@@ -60,7 +69,7 @@ This function should only modify configuration layer settings."
      (shell :variables
             shell-default-height 100
             shell-default-position 'top
-            shell-default-shell 'ansi-term
+            shell-default-shell 'term
             )
      shell-scripts
      sql
@@ -493,24 +502,6 @@ dump."
   )
 
 (defun dotspacemacs/user-config ()
-  ;; EXWM Config
-  ;; (require 'exwm)
-  ;; (require 'exwm-config)
-  ;; (require 'exwm-systemtray)
-  ;; (require 'exwm-randr)
-
-  ;; (setq exwm-workspace-number 4)
-  ;; (setq exwm-workspace-show-all-buffers t)
-  ;; (setq exwm-layout-show-all-buffers t)
-
-  ;; (exwm-randr-enable)
-  ;; (exwm-systemtray-enable)
-
-  ;; (add-hook 'exwm-randr-screen-change-hook
-  ;;           (lambda ()
-  ;;             (start-process-shell-command
-  ;;              "xrandr" nil "xrandr --output eDP-1 --off --output DP-2-2 --primary --auto")))
-
   ;; SHOW TRAILING WHITESPACE
   (require 'whitespace)
   (setq-default whitespace-style '(face trailing))
