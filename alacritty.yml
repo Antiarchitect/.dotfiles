@@ -170,6 +170,41 @@ font:
 # If `true`, bold text is drawn using the bright color variants.
 draw_bold_text_with_bright_colors: false
 
+# Base16 Darktooth - alacritty color config
+# Jason Milkins (https://github.com/jasonm23)
+colors:
+  # Default colors
+  primary:
+    background: '0x1d2021'
+    foreground: '0xa89984'
+
+  # Colors the cursor will use if `custom_cursor_colors` is true
+  cursor:
+    text: '0x1d2021'
+    cursor: '0xa89984'
+
+  # Normal colors
+  normal:
+    black:   '0x1d2021'
+    red:     '0xfb543f'
+    green:   '0x95c085'
+    yellow:  '0xfac03b'
+    blue:    '0x0d6678'
+    magenta: '0x8f4673'
+    cyan:    '0x8ba59b'
+    white:   '0xa89984'
+
+  # Bright colors
+  bright:
+    black:   '0x665c54'
+    red:     '0xfe8625'
+    green:   '0x32302f'
+    yellow:  '0x504945'
+    blue:    '0x928374'
+    magenta: '0xd5c4a1'
+    cyan:    '0xa87322'
+    white:   '0xfdf4c1'
+
 # Colors (Tomorrow Night Bright)
 #colors:
   # Default colors
@@ -278,7 +313,7 @@ draw_bold_text_with_bright_colors: false
 #
 # Window opacity as a floating point number from `0.0` to `1.0`.
 # The value `0.0` is completely transparent and `1.0` is opaque.
-background_opacity: 0.7
+background_opacity: 0.85
 
 #selection:
   #semantic_escape_chars: ",│`|:\"' ()[]{}<>\t"
