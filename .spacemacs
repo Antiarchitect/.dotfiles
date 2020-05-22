@@ -39,6 +39,7 @@ This function should only modify configuration layer settings."
      ;; `M-m f e R' (Emacs style) to install them.
      ;; ----------------------------------------------------------------
      ;; auto-completion
+     base16-theme
      ;; better-defaults
      darktooth-theme
      emacs-lisp
@@ -57,7 +58,6 @@ This function should only modify configuration layer settings."
      (helm :variables
            helm-no-header t
            )
-     html
      javascript
      (lsp :variables
           lsp-rust-server 'rust-analyzer
@@ -230,6 +230,8 @@ It should only modify the values of Spacemacs settings."
    ;; Press `SPC T n' to cycle to the next theme in the list (works great
    ;; with 2 themes variants, one dark and one light)
    dotspacemacs-themes '(darktooth
+                         base16-gruvbox-dark-hard
+                         base16-darktooth
                          spacemacs-dark
                          spacemacs-light)
 
@@ -534,7 +536,11 @@ dump."
   (org-projectile-per-project)
   (setq org-projectile-per-project-filepath "TODO.org")
   (setq org-agenda-files (append org-agenda-files (org-projectile-todo-files))))
-
+  (setq org-todo-keywords '((sequence "TODO(t)" "INPROGRESS(p)" "WAIT(w)" "DONE(d)")))
+  (setq org-todo-keyword-faces
+        '(("INPROGRESS" . org-warning)
+          ("WAIT" . org-warning)
+        ))
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.
 (defun dotspacemacs/emacs-custom-settings ()
