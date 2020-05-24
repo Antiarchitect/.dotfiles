@@ -39,9 +39,7 @@ This function should only modify configuration layer settings."
      ;; `M-m f e R' (Emacs style) to install them.
      ;; ----------------------------------------------------------------
      ;; auto-completion
-     base16-theme
      ;; better-defaults
-     darktooth-theme
      emacs-lisp
      erlang
      (exwm :location (recipe :fetcher github :repo "ch11ng/exwm")
@@ -76,6 +74,7 @@ This function should only modify configuration layer settings."
             )
      shell-scripts
      sql
+     ;; themes-megapack
      (treemacs :variables
                treemacs-show-hidden-files t
                treemacs-sorting 'alphabetic-asc
