@@ -40,6 +40,7 @@ This function should only modify configuration layer settings."
      ;; ----------------------------------------------------------------
      ;; auto-completion
      ;; better-defaults
+     docker
      emacs-lisp
      erlang
      (exwm :location (recipe :fetcher github :repo "ch11ng/exwm")
