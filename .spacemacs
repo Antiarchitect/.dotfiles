@@ -57,13 +57,16 @@ This function should only modify configuration layer settings."
      (helm :variables
            helm-no-header t
            )
-     javascript
+     (json :variables
+           json-fmt-tool 'prettier
+           )
      (lsp :variables
           lsp-rust-server 'rust-analyzer
           )
      markdown
      multiple-cursors
      org
+     ranger
      ruby
      (rust :variables
            rust-backend 'lsp
