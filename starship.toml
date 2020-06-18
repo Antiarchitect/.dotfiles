@@ -10,6 +10,9 @@ symbol = "☢"
 # symbol = "⌲"
 # symbol = "▷"
 
+[git_status]
+stashed = ""
+
 [kubernetes]
 disabled = false
 
