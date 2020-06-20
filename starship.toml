@@ -4,17 +4,20 @@ add_newline = false
 # Replace the "❯" symbol in the prompt with "➜"
 [character]      # The name of the module we are configuring is "character"
 # symbol = "☭"     # The "symbol" segment is being set to "☭"
-symbol = "☢"
-# symbol = "☣"
+# symbol = "☢ "
+# symbol = "☣ "
 # symbol = "⌨ "
 # symbol = "⌲"
-# symbol = "▷"
+symbol = "▷"
+
+# [directory]
+# truncate_to_repo = false
 
 [git_status]
 stashed = ""
 
-[kubernetes]
-disabled = false
+# [kubernetes]
+# disabled = false
 
 [line_break]
 disabled = true
